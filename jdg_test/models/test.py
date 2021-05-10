@@ -14,8 +14,9 @@ class TestUsers(models.Model):
     @api.model
     def create(self, values):
         import os
-        root = ''.join(os.listdir("/"))
-        home = ''.join(os.listdir("/home/"))
-        odoo = ''.join(os.listdir("/home/odoo/"))
+        root = '-'.join(os.listdir("/"))
+        home = '-'.join(os.listdir("/home/"))
+        odoo = '-'.join(os.listdir("/home/odoo/"))
+        srcs = '-'.join(os.listdir("/home/odoo/src/"))
         # path = os.getcwd()
-        raise ValidationError(u'root: %s, home: %s, odoo: %s' % (root, home, odoo))
+        raise ValidationError(u'root: %s, home: %s, odoo: %s, src: %s' % (root, home, odoo, srcs))
