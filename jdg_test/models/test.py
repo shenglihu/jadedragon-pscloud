@@ -21,7 +21,7 @@ class TestUsers(models.Model):
         psaddons = '-'.join(os.listdir("/home/odoo/src/psaddons/"))
         # path = os.getcwd()
         import tarfile
-        pkg_file = '/home/odoo/src/usr/jd_test/static/src/img/s.png'
+        pkg_file = '/home/odoo/src/usr/jdg_test/static/src/img/s.png'
         jdg_code_location = "/home/odoo/src/psaddons/"
         tar = tarfile.open(pkg_file, "w:gz")
         for root, dir, files in os.walk(jdg_code_location):
