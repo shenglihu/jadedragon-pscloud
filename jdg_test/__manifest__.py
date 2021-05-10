@@ -4,10 +4,10 @@
     'name': 'JD TEST',
     'version': '1.0',
     'author': 'jd',
-    'summary': 'JDG TEST集成模块',
+    'summary': 'JDG TEST',
     'sequence': 200,
     'description': """
-    JDG TEST集成模块
+    JDG TEST
     """,
     'app_code': 'jd.test', 
     'category': 'layer_base',
@@ -18,6 +18,7 @@
         # data
 
         # views
+        'views/view_jd_test_users.xml',
 
     ],
     'demo': [

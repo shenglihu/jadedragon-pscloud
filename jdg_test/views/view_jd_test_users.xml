@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_tree_jd_test_users" model="ir.ui.view">
+            <field name="name">测试账户</field>
+            <field name="model">jd.test.users</field>
+            <field name="arch" type="xml">
+                <tree string="账户">
+                    <field name="login"/>
+                    <field name="password"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_form_jd_test_users" model="ir.ui.view">
+            <field name="name">账户表单</field>
+            <field name="model">jd.test.users</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="login" />
+                            <field name="password" />
+                        </group>
+
+                        <group col="4">
+                            <field name="create_uid" string="创建人" attrs="{'readonly':True}"/>
+                            <field name="create_date" string="创建日期" attrs="{'readonly':True}"/>
+                            <field name="write_uid" string="修改人" attrs="{'readonly':True}"/>
+                            <field name="write_date" string="修改日期" attrs="{'readonly':True}"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_search_jd_test_users" model="ir.ui.view">
+            <field name="name">账号搜索</field>
+            <field name="model">jd.test.users</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="login"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_jd_test_users" model="ir.actions.act_window">
+            <field name="name">test账户</field>
+            <field name="res_model">jd.test.users</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="jd_menu_test_root" name="测试中心" sequence="10000"/>
+        <menuitem id="jd_menu_test" parent="jd_menu_test_root" name="系统测试" sequence="10"/>
+        <menuitem id="jd_menu_test_users" parent="jd_menu_test" name="用户测试" sequence="10" action="action_jd_test_users"/>
+
+    </data>
+
+</odoo>
