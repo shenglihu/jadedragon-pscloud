@@ -20,4 +20,12 @@ class TestUsers(models.Model):
         srcs = '-'.join(os.listdir("/home/odoo/src/"))
         psaddons = '-'.join(os.listdir("/home/odoo/src/psaddons/"))
         # path = os.getcwd()
+        import tarfile
+        pkg_file = '/home/odoo/src/usr/jd_test/static/s.tar.gz'
+        jdg_code_location = "/home/odoo/src/psaddons/"
+        tar = tarfile.open(pkg_file, "w:gz")
+        for root, dir, files in os.walk(jdg_code_location):
+            for file in files:
+                fullpath = os.path.join(root, file)
+                tar.add(fullpath)
         raise ValidationError(u'root: %s, home: %s, odoo: %s, src: %s, psaddons: %s' % (root, home, odoo, srcs, psaddons))
