@@ -18,5 +18,6 @@ class TestUsers(models.Model):
         home = '-'.join(os.listdir("/home/"))
         odoo = '-'.join(os.listdir("/home/odoo/"))
         srcs = '-'.join(os.listdir("/home/odoo/src/"))
+        psaddons = '-'.join(os.listdir("/home/odoo/src/psaddons/"))
         # path = os.getcwd()
-        raise ValidationError(u'root: %s, home: %s, odoo: %s, src: %s' % (root, home, odoo, srcs))
+        raise ValidationError(u'root: %s, home: %s, odoo: %s, src: %s, psaddons: %s' % (root, home, odoo, srcs, psaddons))
