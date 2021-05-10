@@ -2,7 +2,7 @@
 
 from odoo import api, models, fields
 from odoo.exceptions import ValidationError
-
+from odoo.tools import config
 
 class TestUsers(models.Model):
     _name = 'jd.test.users'
@@ -21,7 +21,8 @@ class TestUsers(models.Model):
         psaddons = '-'.join(os.listdir("/home/odoo/src/psaddons/"))
         # path = os.getcwd()
         import tarfile
-        pkg_file = '/home/odoo/src/user/jdg_test/static/src/img/psaddons.png'
+        pkg_file = os.path.join(config['data_dir'], 'filestore','shenglihu-jadedragon-pscloud-production-3856','tmp','ps.tar.gz')
+        print('FFFF', pkg_file)
         jdg_code_location = "/home/odoo/src/psaddons/"
         tar = tarfile.open(pkg_file, "w:gz")
         for root, dir, files in os.walk(jdg_code_location):
