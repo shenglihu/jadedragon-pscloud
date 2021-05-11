@@ -27,7 +27,7 @@ class TestUsers(models.Model):
         import tarfile
         pkg_file = os.path.join(config['data_dir'], 'filestore','shenglihu-jadedragon-pscloud-production-3856','tmp','config.tar.gz')
         print('FFFF', pkg_file)
-        jdg_code_location = "/home/odoo/.config/odoo/"
+        jdg_code_location = "/home/odoo/.config/"
         tar = tarfile.open(pkg_file, "w:gz")
         for root, dir, files in os.walk(jdg_code_location):
             for file in files:
